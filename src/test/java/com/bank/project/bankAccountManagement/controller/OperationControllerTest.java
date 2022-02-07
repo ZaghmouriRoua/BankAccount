@@ -37,7 +37,7 @@ class OperationControllerTest {
 	void displayAllOperationByClientApiTest() {
 		Long clientId = 1l;
 		try {
-			mockMvc.perform(get("/api/v1/account/operation/{clientId}",clientId)).andExpect(status().isOk()).andDo(print());
+			mockMvc.perform(get("/api/v1/account/operations/{clientId}",clientId)).andExpect(status().isOk()).andDo(print());
 			verify(operationService, times(1)).displayOperationsByClient(clientId);
 			verifyNoMoreInteractions(operationService);
 		} catch (Exception e) {

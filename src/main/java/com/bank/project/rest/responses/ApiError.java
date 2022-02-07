@@ -7,7 +7,7 @@ public enum ApiError {
 	INVALID_BODY_FIELD_ACCOUNT_NUMBER(Constants.INVALID_BODY_FIELD,"The account number is a mandatory field."),
 	EMPTY_BODY_FIELD_ACCOUNT_TYPE(Constants.INVALID_BODY_FIELD,"The account type can not be empty." ),
 	INVALID_ACCOUNT_TYPE("Invalid account type","The account type is invalid.It must be of type 'courant' or 'epargne'."),
-	NEGATIVE_AMOUNT("Negative Amount","The versed ammount can not be a nagative value."),
+	NEGATIVE_AMOUNT("Negative Amount","The versed amount can not be a negative value."),
 	RESSOURCE_NOT_FOUND("Resource not found", "The requested account does not exist."),
 	INSUFFICIENT_BALANCE("Insufficient account balance","Your account balance is insufficient to complete this transaction.");
 	

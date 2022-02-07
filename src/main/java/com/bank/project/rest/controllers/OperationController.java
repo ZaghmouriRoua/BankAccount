@@ -13,21 +13,23 @@ import com.bank.project.models.Operation;
 import com.bank.project.rest.controllers.interfaces.OperationApi;
 import com.bank.project.service.OperationService;
 
-
-
 @RestController
-@RequestMapping("/api/v1/account/operation")
-public class OperationController implements OperationApi{
+@RequestMapping("/api/v1/account/operations")
+public class OperationController implements OperationApi {
+
+	private OperationService operationService;
+	private ModelMapper modelMapper;
 
 	@Autowired
-	OperationService operationService;
-	
-	@Autowired
-	private ModelMapper modelMapper;
-	
+	public OperationController(OperationService operationService, ModelMapper modelMapper) {
+		this.operationService = operationService;
+		this.modelMapper = modelMapper;
+	}
+
 	@Override
 	public List<OperationDto> displayAllOperationByClient(Long clientId) {
-		return operationService.displayOperationsByClient(clientId).stream().map(this::convertToDTO).collect(Collectors.toList());
+		return operationService.displayOperationsByClient(clientId).stream().map(this::convertToDTO)
+				.collect(Collectors.toList());
 	}
 
 	private OperationDto convertToDTO(Operation operation) {

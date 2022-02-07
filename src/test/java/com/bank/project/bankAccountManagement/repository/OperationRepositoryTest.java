@@ -35,7 +35,7 @@ class OperationRepositoryTest {
 		List<Long> ls=new ArrayList<>();
 		ls.add(account.getId());
 		List<Operation> operations=operationRepository.findByAccountsId(ls);
-		assertEquals(2, operations.size());
+		assertEquals(1, operations.size());
 	}
 
 }

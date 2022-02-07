@@ -11,6 +11,6 @@ import com.bank.project.models.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long>{
 	
-		public Optional<Account> findByClientIdAndAccountNumber(Long id,Long accountNumber);
+		public Optional<Account> findByAccountNumber(Long accountNumber);
 		public List<Account> findByClientId(Long id);
 }

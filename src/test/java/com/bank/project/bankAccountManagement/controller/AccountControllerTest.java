@@ -45,7 +45,7 @@ class AccountControllerTest {
 	}
 	
 	@Test
-	 void retreiveAmountApiTest() throws JsonProcessingException {
+	 void retrieveAmountApiTest() throws JsonProcessingException {
 		String requestBody = "{\"amount\":5,\"accountType\":\"epargne\"}";
 		Long clientId = 1l;
 		

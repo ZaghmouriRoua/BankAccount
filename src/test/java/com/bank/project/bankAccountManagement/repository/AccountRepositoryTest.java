@@ -41,8 +41,7 @@ class AccountRepositoryTest {
 	@Test
 	void findByClientIdAndAccountNumberTest() {
 
-		Optional<Account> returnedAccount = accountRepository.findByClientIdAndAccountNumber(client.getId(),
-				account.getAccountNumber());
+		Optional<Account> returnedAccount = accountRepository.findByAccountNumber(account.getAccountNumber());
 		assertEquals(20.0, returnedAccount.get().getAccountBalance());
 
 	}

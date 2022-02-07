@@ -11,10 +11,14 @@ import com.bank.project.service.AccountService;
 
 @RestController
 @RequestMapping("/api/v1/account")
-public class AccountController implements AccountApi{
-	
+public class AccountController implements AccountApi {
+
+	private AccountService accountService;
+
 	@Autowired
-	AccountService accountService;
+	public AccountController(AccountService accountService) {
+		this.accountService = accountService;
+	}
 
 	@Override
 	public ClientBalance depositAmount(Long clientId, ClientTransaction clientTransaction) {
